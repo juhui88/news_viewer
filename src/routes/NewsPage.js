@@ -5,7 +5,7 @@ import NewsList from "../components/NewList";
 
 const NewsPage = () => {
     const {category} = useParams();
-    console.log(category);
+    
     return (
         <div>
             <Categories/>

@@ -1,5 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
+import "./Categories.css"
 
 const categories = [
     {
@@ -33,15 +34,17 @@ const categories = [
 ]
 
 const Categories = () => {
-    
     return(
         <div className="categories">
-            {categories.map(c =>(
-                <Link to = {`/${c.name}`}>
-                    <h2>{c.text}</h2>
-                </Link>
+            <div className = "category">
+                {categories.map(c =>(
+                    <NavLink to = {`/${c.name}`} className="category_text" activeClassName = "active" >
+                        {c.text}
+                    </NavLink>
 
-                ))}    
+                    ))} 
+            </div>
+                   
         </div>
         
     )

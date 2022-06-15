@@ -1,0 +1,24 @@
+.categories {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 8vh;
+}
+
+.category {
+    margin: 1vh;
+    font-size: 20px;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.category_text {
+    text-decoration: none;
+    margin: 1vh;
+    color: black;
+    font-weight: bold;
+}
+.active {
+    color: rgb(49, 187, 238);
+    text-decoration: underline;
+}

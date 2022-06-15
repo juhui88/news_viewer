@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import NewsItem from "./NewsItem";
+import "./NewsList.css";
 
 const NewsList = ({category}) => {
     const [news, setNews] = useState([]);
@@ -19,16 +20,14 @@ const NewsList = ({category}) => {
     useEffect(() =>{getNews()}, [category])
 
     return (
-        <div>
+        <div className="news">
             {loading? <h1>Loading...</h1> : news.map((n) => 
-                <div>
-                    <NewsItem 
-                        url = {n.url}
-                        urlImg = {n.urlToImage}
-                        title = {n.title}
-                        description = {n.description}
-                    />
-                </div>
+                <NewsItem 
+                    url = {n.url}
+                    urlImg = {n.urlToImage}
+                    title = {n.title}
+                    description = {n.description}
+                />
             )}
         </div>)
 }
