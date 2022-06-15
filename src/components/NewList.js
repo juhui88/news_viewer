@@ -8,13 +8,15 @@ const NewsList = ({category}) => {
     const query = category === undefined ? "" : `&category=${category}`;
 
 
-    const getNews = async() => {
-        const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=120099f250774af88a0973a2294cb5eb`)
-            setNews(response.data.articles);
-            setLoading(false);
+    const getNews = () => {
+        axios.get(`https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=120099f250774af88a0973a2294cb5eb`)
+            .then(response => {
+                setNews(response.data.articles);
+                setLoading(false);
+            })
         }
-
-    useEffect(() =>getNews, [category])
+    
+    useEffect(() =>{getNews()}, [category])
 
     return (
         <div>

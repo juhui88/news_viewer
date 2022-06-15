@@ -35,13 +35,13 @@ const categories = [
 const Categories = () => {
     
     return(
-        <div>
+        <div className="categories">
             {categories.map(c =>(
                 <Link to = {`/${c.name}`}>
                     <h2>{c.text}</h2>
                 </Link>
-                    
-                ))}     
+
+                ))}    
         </div>
         
     )
